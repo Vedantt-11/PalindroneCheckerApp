@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class Palindrome_Checker_App {
+public class Queue_Stack_Check {
 
     public static void main(String[] args) {
 
@@ -14,7 +14,7 @@ public class Palindrome_Checker_App {
         for (char c : input.toCharArray()) {
             queue.add(c);
             stack.push(c);
-        }   // ← Missing brace was here
+        }
 
         boolean isPalindrome = true;
 
@@ -29,3 +29,4 @@ public class Palindrome_Checker_App {
         System.out.println("Is Palindrome?: " + isPalindrome);
     }
 }
+
