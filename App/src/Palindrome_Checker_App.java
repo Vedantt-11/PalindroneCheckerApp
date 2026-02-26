@@ -1,27 +1,31 @@
-
-
-
-
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 public class Palindrome_Checker_App {
 
-    // Application Version (Constant)
-    static final String APP_VERSION = "1.0.0";
-
-    // Main Method - Entry Point
     public static void main(String[] args) {
 
-        // Welcome Message
-        System.out.println("=====================================");
-        System.out.println("     Welcome to Palindrome Checker   ");
-        System.out.println("=====================================");
+        String input = "civic";
 
-        // Application Details
-        System.out.println("Application Name : Palindrome Checker App");
-        System.out.println("Application Version : " + APP_VERSION);
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack = new Stack<>();
 
-        // Startup Confirmation
-        System.out.println("\nApplication started successfully!");
-        System.out.println("Ready to validate palindromes...\n");
+        for (char c : input.toCharArray()) {
+            queue.add(c);
+            stack.push(c);
+        }   // ← Missing brace was here
+
+        boolean isPalindrome = true;
+
+        while (!queue.isEmpty()) {
+            if (!queue.remove().equals(stack.pop())) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("Input: " + input);
+        System.out.println("Is Palindrome?: " + isPalindrome);
     }
 }
